@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+}
+.container-fluid{
+    background-color: skyblue;
+}
+.navbar-light .navbar-brand {
+    color: #fff;
+	font-family: auto;
+	font-size: 33px;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+	box-shadow: 0px 0px 5px;
+	margin: 15px;
+	font-family: auto;
+	font-size: 18px;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+button a{
+    color: #fff;
+    text-decoration: none;
+
+}
+a:hover{
+	color: #fff;
+}

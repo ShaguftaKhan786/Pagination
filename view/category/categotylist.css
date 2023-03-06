@@ -1,0 +1,88 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+}
+.container-fluid{
+    background-color: skyblue;
+}
+.navbar-light .navbar-brand {
+    color: #fff;
+	font-family: auto;
+	font-size: 33px;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+	box-shadow: 0px 0px 5px;
+	margin: 15px;
+	font-family: auto;
+	font-size: 18px;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+select{
+	height: 35px;
+	background: rgb(225, 240, 243);
+	justify-content: center;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+    
+    
+}
+
+input{
+	height: 35px;
+	background: rgb(225, 240, 243);
+	justify-content: center;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+    
+    
+}
+
+button{
+	width: 86px;
+	height: 35px;
+	margin: 10px auto;
+	justify-content: center;
+	color: #fff;
+	background: rgb(6, 158, 218);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: skyblue;
+}
+
+button a{
+    color: #fff;
+    text-decoration: none;
+
+}
