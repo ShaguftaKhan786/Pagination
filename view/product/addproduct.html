@@ -27,12 +27,7 @@
           <li class="nav-item">
             <a class="nav-link" href="addproduct.html">Add Product</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../category/categorylist.html">Category List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../category/addcategory.html">Add Category</a>
-          </li>
+         
 
         </ul>
       </div>
@@ -48,6 +43,11 @@
           <div>
             <label>Name</label>
             <input type="text" class="form-control" id="name" name="name" />
+          </div><br>
+          <label>category</label>
+            <select name="" id="category" class="form-control">
+              <option value="">--Select categhory--</option>
+            </select>
           </div><br>
           <button type="button" class="btn btn-primary" onclick="saveProduct()">Save</button>
 
@@ -71,10 +71,12 @@
     function saveProduct() {
       
       var name = document.getElementById('name').value;
-      
+      var category = document.getElementById('category').value;
+
 
       var data ={
-        name:name
+        name:name,
+        category:category
       }
       
 
@@ -95,6 +97,19 @@
 
     }
 
+    function getCategories() {
+      fetch('http://localhost:8000/category/get-categories')
+        .then((response) => response.json())
+        .then((data) => {
+          var optionS = '<option value="">--Select category--</option>';
+          data.data.map((element, i) => {
+            optionS += `<option value="${element._id}">${element.name}</option>`;
+          });
+          document.getElementById('category').innerHTML += optionS
+        })
+        .catch((err) => console.log(err))
+    }
+    getCategories();
  
 
 

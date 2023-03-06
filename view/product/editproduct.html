@@ -42,7 +42,10 @@
             <label>Name</label>
             <input type="text" class="form-control" id="name" name="name" />
           </div><br>
-
+          <label>category</label>
+          <select name="" id="category" class="form-control">
+          </select>
+        </div><br>
           <button type="button" class="btn btn-primary" onclick="updateProduct()">Update</button>
 
         </form>
@@ -63,19 +66,37 @@
 
 
 
+    function getCategories() {
+        fetch("http://localhost:8000/category/get-categories")
+          .then((response) => response.json())
+          .then((data) => {
+            var option = '<option value="">--Select category--</option>';
+            data.data.map((element, i) => {
+              option += `<option value="${element._id}">${element.name}</option>`;
+            });
+            document.getElementById("category").innerHTML = option;
+          })
+          .catch((err) => console.log(err));
+      }
+      getCategories();
     fetch("http://localhost:8000/product/get-products/"+productID)
       .then((response) => response.json())
       .then((res) => {
 
         document.getElementById("name").value = data.data.name;
+        document.getElementById("category").value = user?.category?._id;
+
       })
       .catch((err) => console.log(err));
 
     function updateProduct() {
       var name = document.getElementById("name").value;
+      var category = document.getElementById("category").value;
+
 
       var data = {
-        name:name
+        name:name,
+        category:category
       }
       console.log(data)
 
